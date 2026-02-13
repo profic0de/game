@@ -22,9 +22,6 @@ int main(int argc, char **argv)
             lps = loops;
             loops = 0;
             last_time = now;
-            // if (++timer>=5) exitbool = 1;
-            call_event(EVENT_SEC, NULL);
-            // LOG("%d", lps);
         }
     }
     return 0;
