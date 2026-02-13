@@ -12,7 +12,7 @@ ptr **events; //If you see this: for the sake of your own sanity, leave before i
 #define eof (void *)1 //Not the same, Don't touch this
 
 void on_event(ptr event, ptr func) {
-    if (!event||event==(ptr)1) return;
+    if (!event) return;
     if (!events) {
         events = calloc(event_count+1, sizeof(ptr));
         events[0] = calloc(event_func_count+2, sizeof(ptr));
@@ -76,8 +76,7 @@ void on_event(ptr event, ptr func) {
 }
 
 void call_event(ptr event, ptr ptr) {
-    if (!event||event==(void *)1) return;
-    if (!events) return;
+    if (!events||!event) return;
     int i = 0;
     while (events[i]!=eof) {
         if (events[i]&&events[i][0]==event) break;

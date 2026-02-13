@@ -12,9 +12,6 @@ int delay(double seconds_interval, int *last_tick) {
 }
 
 static void calls(ptr ptr) {
-    static int fps, tps;
-    if (delay(1.0/60.0, &(fps))) call_event(EVENT_FPS, NULL);
-    if (delay(1.0/20.0, &(tps))) call_event(EVENT_TPS, NULL);
     // static int sec; if (delay(1.0, &(sec))) DEBUG(lps);
 }
 
