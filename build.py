@@ -50,7 +50,7 @@ def get_sdl2_flags(sdl2=True):
 def compile_sources(sources, output):
     print("📦 Compiling sources...")
     cmd = ["gcc", "-g","-fsanitize=address", "-I.", "-Istuff", "-Wall", "-Wno-deprecated-declarations", "-Wno-nonnull", "-o", output,
-           "-L/usr/lib", "-lcurl", "-lm"] + get_sdl2_flags() + sources #, "-Dprintf(...)=my_printf(__VA_ARGS__)"
+           "-L/usr/lib", "-lcurl", "-lm"] + get_sdl2_flags(False) + sources #, "-Dprintf(...)=my_printf(__VA_ARGS__)"
         #    "-L/usr/lib", "-lcrypto", "-lssl", "-lresolv", "-lcurl"] + sources #, "-Dprintf(...)=my_printf(__VA_ARGS__)"
     result = subprocess.run(cmd)
     return result.returncode == 0
