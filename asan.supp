@@ -1,0 +1,4 @@
+leak:wl_display_create_queue_with_name
+leak:eglInitialize
+leak:SDL_EGL_LoadLibrary
+leak:SDL_GL_LoadLibrary
