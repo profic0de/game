@@ -5,8 +5,7 @@ unsigned long lps;
 
 // char timer;
 
-int main(int argc, char **argv)
-{
+int main(int argc, char **argv) {
     unsigned long loops = 0;
     clock_t last_time = clock();
     double elapsed = 0;
